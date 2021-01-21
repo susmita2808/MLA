@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href = "https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css"
+    rel = "stylesheet">
+ <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+ <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+
+<script>
+
+    var date = new Date();
+    var cyear= date.getFullYear();
+    var cmonth= date.getMonth();
+    var cdate= date.getDate();
+    $( document ).ready(function() {
+
+        $( "#datepicker" ).datepicker({
+            maxDate: new Date(cyear,cmonth,cdate)
+        });
+ 
+  
+});
+
+</script>
+<body>
+   Date: <input type="text" id="datepicker">
+</body>
+</html>
+
+
+
+
+app.module.tsimport { DatePipe } from '@angular/common'; providers: [DatePipe],-----------------------------something.component.ts: today=new Date();    //to get today's date  todayStr:string;    //transformed date in "yyyy-MM-dd"//inject private datepipe:DatePipe to the constructor this.todayStr=this.datepipe.transform(this.today,'yyyy-MM-dd');------------------------------something.component.html:<input type="date" name="" id="" formControlName="dob" [max]="todayStr">
+
